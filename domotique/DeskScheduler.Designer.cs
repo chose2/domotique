@@ -1,7 +1,7 @@
 ﻿
 namespace domotique
 {
-    partial class Form1
+    partial class DeskScheduler
     {
         /// <summary>
         /// Required designer variable.
@@ -52,14 +52,20 @@ namespace domotique
             this.label1 = new System.Windows.Forms.Label();
             this.AddCommandButton = new System.Windows.Forms.Button();
             this.commandSelection = new System.Windows.Forms.ComboBox();
-            this.RaiseButton = new System.Windows.Forms.Button();
             this.timer1m = new System.Windows.Forms.Timer(this.components);
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.RaiseTimer = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hour)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RaiseTimer)).BeginInit();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -90,7 +96,6 @@ namespace domotique
             this.progressBar1.Size = new System.Drawing.Size(304, 23);
             this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 2;
-            this.progressBar1.Value = 20;
             // 
             // groupBox1
             // 
@@ -137,7 +142,6 @@ namespace domotique
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Time";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // label2
             // 
@@ -291,33 +295,70 @@ namespace domotique
             this.commandSelection.TabIndex = 7;
             this.commandSelection.Text = "None";
             // 
-            // RaiseButton
-            // 
-            this.RaiseButton.Location = new System.Drawing.Point(457, 284);
-            this.RaiseButton.Name = "RaiseButton";
-            this.RaiseButton.Size = new System.Drawing.Size(75, 23);
-            this.RaiseButton.TabIndex = 8;
-            this.RaiseButton.Text = "Raise";
-            this.RaiseButton.UseVisualStyleBackColor = true;
-            this.RaiseButton.Click += new System.EventHandler(this.button1_Click);
-            // 
             // timer1m
             // 
             this.timer1m.Interval = 60000;
             this.timer1m.Tick += new System.EventHandler(this.timer1m_Tick);
             // 
-            // Form1
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.groupBox6);
+            this.groupBox5.Location = new System.Drawing.Point(435, 276);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(133, 101);
+            this.groupBox5.TabIndex = 8;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Raise Time";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label3);
+            this.groupBox6.Controls.Add(this.RaiseTimer);
+            this.groupBox6.Location = new System.Drawing.Point(6, 19);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(111, 46);
+            this.groupBox6.TabIndex = 12;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Time";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(65, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Minutes";
+            // 
+            // RaiseTimer
+            // 
+            this.RaiseTimer.Location = new System.Drawing.Point(10, 19);
+            this.RaiseTimer.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.RaiseTimer.Name = "RaiseTimer";
+            this.RaiseTimer.Size = new System.Drawing.Size(49, 20);
+            this.RaiseTimer.TabIndex = 0;
+            this.RaiseTimer.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // DeskScheduler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 480);
-            this.Controls.Add(this.RaiseButton);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.currentTime);
             this.Controls.Add(this.monthCalendar1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "DeskScheduler";
+            this.Text = "Desk Scheduler";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -328,6 +369,10 @@ namespace domotique
             ((System.ComponentModel.ISupportInitialize)(this.hour)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RaiseTimer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,8 +402,11 @@ namespace domotique
         private System.Windows.Forms.ComboBox commandSelection;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button RaiseButton;
         private System.Windows.Forms.Timer timer1m;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.NumericUpDown RaiseTimer;
+        private System.Windows.Forms.Label label3;
     }
 }
 

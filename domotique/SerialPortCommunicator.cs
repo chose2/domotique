@@ -9,13 +9,13 @@ namespace domotique
 {
     public class SerialPortCommunicator
     {
-        public String[] Commands = { "None", "Raise desk", "Lower desk" };
+        public String[] Commands = { "None", "Lower desk", "Raise desk" };
         SerialPort serialPort;
 
         public SerialPortCommunicator()
         {
             serialPort = new SerialPort();
-            serialPort.PortName = "COM3";
+            serialPort.PortName = "COM4";
             serialPort.BaudRate = 9600;
             //serialPort.Parity = SetPortParity(_serialPort.Parity);
             //serialPort.DataBits = SetPortDataBits(_serialPort.DataBits);
